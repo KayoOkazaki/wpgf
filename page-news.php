@@ -15,9 +15,17 @@
             <div id="main">
 
                 <section id="news-section">
-                    <h2>What's New&nbsp;&nbsp;新着情報</h2>
-			            		<?php	if(have_posts()):?>
-				  							<?php while(have_posts()):the_post();?>
+                    <h2>News&nbsp;&nbsp;ニュース</h2>
+										<?php
+										 $args = array(
+												 'post_type' => 'news',
+												 'post_status' => 'publish',
+												 'posts_per_page' => 5
+										 );
+										 $customPosts = get_posts($args);
+										 ?>
+										 <?php if ($customPosts): ?>
+											 <?php foreach ($customPosts as $post): setup_postdata( $post );?>
 			                    <article id="news01">
 			                        <h3><?php the_title(); ?></h3>
 			                        <span class="date"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></i>&nbsp;<?php the_time("Y-n-j"); ?></span>
@@ -29,8 +37,9 @@
 																	<?php endif; ?>
 			                        </div>
 			                    </article>
-												<?php endwhile; ?>
-											<?php endif; ?>
+												<?php endforeach; ?>
+											 <?php endif; ?>
+										 <?php wp_reset_postdata(); ?>
                 </section>
             </div>
         </div>

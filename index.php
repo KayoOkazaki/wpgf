@@ -13,7 +13,7 @@
        <div id="contentsInner">
             <div id="main">
                 <section id="news">
-                    <h2>NEWS お知らせ</h2>
+                    <h2>What's New&nbsp;&nbsp;新着情報</h2>
                       <div>
                         <ul>
                         <?php

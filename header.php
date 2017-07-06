@@ -31,7 +31,7 @@
               <p>Welcome to <?php bloginfo('title'); ?>!<br>
                  We help Relaxing for your body and mind.<br><br>
                  TEL: 080-1234-5678<br><br>
-                <a class="buttn" href="<?php echo get_permalink( get_page_by_path('contact')->ID); ?>"><span>ご予約はこちら</span></a>
+                <a class="buttn" href="<?php echo get_permalink( get_page_by_path('contact')->ID); ?>"><span>ご予約・お問合せ</span></a>
               </p>
             </div>
         </div>
