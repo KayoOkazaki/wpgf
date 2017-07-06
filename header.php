@@ -36,10 +36,10 @@
             </div>
         </div>
         <div id="globalNavi">
-							 <?php
-								 wp_nav_menu(array(
-												 'menu' => '',
-												 'menu_class' => 'navi'
-							 ));
-							 ?>
+		 <?php
+			 wp_nav_menu(array(
+				 'menu' => '',
+				 'menu_class' => 'navi'
+			 ));
+		 ?>
         </div>
