@@ -1,0 +1,6 @@
+/node_modules/*
+/backup/*
+/_resource/*
+package.json
+gulpfile.js
+
