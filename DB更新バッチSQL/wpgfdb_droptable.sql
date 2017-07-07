@@ -1,0 +1,1 @@
+DROP TABLE `gf_commentmeta`, `gf_comments`, `gf_links`, `gf_options`, `gf_postmeta`, `gf_posts`, `gf_termmeta`, `gf_terms`, `gf_term_relationships`, `gf_term_taxonomy`, `gf_usermeta`, `gf_users`;
