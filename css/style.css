@@ -14,7 +14,7 @@
   margin-top: 20px;
 }
 
-.wrapper {
+#aboutus article .wrapper {
   display: flex;
 }
 
@@ -115,7 +115,7 @@
   margin-top: 20px;
 }
 
-.wrapper {
+#trouble article .wrapper {
   display: flex;
 }
 
@@ -136,7 +136,7 @@
   margin-top: 20px;
 }
 
-.wrapper {
+#blog article .wrapper {
   display: flex;
 }
 
@@ -151,19 +151,31 @@
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 300px;
 }
 
-news-section article {
+#news-section article {
   margin-top: 20px;
 }
 
-.wrapper {
-  display: flex;
+#news-section h2,
+#news-section h3,
+#news-section span {
+	clear:both;
 }
 
-news-section .wrapper img {
-  width: 170px;
+#news-section .article {
+	width: 80%;
+	float: left;
 }
+#news-section .thumb {
+	width: 20%;
+	float: right;
+}
+/*
+#news-section .thumb img {
+  width: 200px;
+}*/
 
 #news-section .date {
   width: 20%;

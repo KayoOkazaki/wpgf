@@ -17,46 +17,40 @@
                       <div>
                         <ul>
                         <?php
-													$args = array(
-																		'post_type' => 'news',
-																		'post_status' => 'publish',
-																		'posts_per_page' => 7
-													);
-													$customPosts = get_posts($args);
-												?>
-<!--										新着情報があれば -->
-												<?php if ($customPosts): ?>
+							$args = array(
+								'post_type' => 'news',
+								'post_status' => 'publish',
+								'posts_per_page' => 5
+							);
+							$customPosts = get_posts($args);
+						?>
+<!--					新着情報があれば -->
+						<?php if ($customPosts): ?>
 
-<!--											新着情報をデータの数分表示 -->
-													<?php foreach ($customPosts as $post): setup_postdata($post); ?>
+<!--						新着情報をデータの数分表示 -->
+							<?php foreach ($customPosts as $post): setup_postdata($post); ?>
 
-                            <li><span class="news-date"><time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y-m-d'); ?></time></span>
-																<span class="news-title">
-	<!--                           新着情報本文が存在すれば -->
-																	<?php if(get_the_content()): ?>
+                            <li>
+                            	<span class="news-date"><time datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y-m-d'); ?></time></span>
+								<span class="news-title">
+<!--                      		新着情報本文が存在すれば -->
+								<?php if(get_the_content()): ?>
 
-	<!--                              新着情報タイトルと本文リンク情報を表示 -->
-																		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+<!--                          		新着情報タイトルと本文リンク情報を表示 -->
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 
-	<!-- 													 上記以外の時 -->
-																	<?php else: ?>
+<!--						 	上記以外の時 -->
+								<?php else: ?>
 
-	<!--                              新着情報タイトルのみ表示 -->
-																		<?php the_title(); ?>
-																	<?php endif; ?>
-																</span>
-														</li>
-													<?php endforeach; ?>
-												<?php endif; ?>
-											<?php wp_reset_postdata(); ?>
-                            <li><span class="news-date"><time datetime="2017-05-25">2017-05-25</time></span>
-                                <span class="news-title"><a href="<?php echo get_permalink( get_page_by_path('news')->ID); ?>#news03">レイキヒーリング講習会開催</a></span></li>
-                            <li><span class="news-date"><time datetime="2017-04-21">2017-04-21</time></span>
-                                <span class="news-title"><a href="<?php echo get_permalink( get_page_by_path('news')->ID); ?>#news04">友達紹介キャンペーン</a></span></li>
-                            <li><span class="news-date"><time datetime="2017-04-03">2017-04-03</time></span>
-                                <span class="news-title"><a href="<?php echo get_permalink( get_page_by_path('news')->ID); ?>#news05">会員の方向けポイントカード始めました</a></span></li>
-
-                        </ul>
+<!--                           	新着情報タイトルのみ表示 -->
+									<?php the_title(); ?>
+								<?php endif; ?>
+								</span>
+							</li>
+							<?php endforeach; ?>
+						<?php endif; ?>
+						<?php wp_reset_postdata(); ?>
+                    	</ul>
                     </div>
                 </section>
                 <section id="trouble">
