@@ -20,7 +20,7 @@
 					 $args = array(
 							 'post_type' => 'news',
 							 'post_status' => 'publish',
-							 'posts_per_page' => 5
+							 'posts_per_page' => -1
 					 );
 					 $customPosts = get_posts($args);
 					 ?>

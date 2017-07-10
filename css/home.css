@@ -3,7 +3,7 @@
 /* News 一覧 */
 /*********************/
 #top #news {
-  width: 50%;
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
   font-weight: 700;
@@ -15,7 +15,7 @@
 #top #news ul li {
   margin-top: 20px;
   padding: 0 10px 10px 160px;
-/*  border-bottom: 1px dotted #453319;*/
+  /*border-bottom: 1px dotted #43ba38;*/
   text-indent: -160px;
   list-style-type: none;
 }
@@ -24,9 +24,8 @@
 	border-bottom-color: #43ba38;
 }
 .news-title{
-	border-bottom: dotted;
 	border-width: 1px;
-	border-bottom-color: #43ba38;
+	border-bottom: 1px dotted #43ba38;
 }
 
 .news-title a {
@@ -48,10 +47,10 @@
 /* お悩み一覧  */
 /*********************/
 #trouble {
-  width: 80%;
-  /*  margin-left: auto;
-  margin-right: auto;*/
-  margin: 0 auto;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+ /* margin: 0 auto;*/
 }
 
 #trouble h2 {
@@ -66,6 +65,10 @@
   display: table-cell;
 }
 
+.list-mv05 {
+	margin-right: 0;
+	margin-left: 0;
+}
 .list-mv05.mv05 {
   /*margin:40px 10px;*/
 }
@@ -228,10 +231,7 @@
 }
 .text {
   position: relative;
-/*  margin:80px 50px 50px;
-  width: 200px;
-  padding: 20px;
-  border: 1px solid #ccc;*/
+
 }
 .fukidashi {
   display: none;
@@ -241,7 +241,7 @@
   left:95px;
   padding: 10px;
   border-radius: 20px;
-  background: #cccccc;
+  background: #fbd1fc;
   color: #333333;
   font-weight: bold;
 }
@@ -254,7 +254,7 @@
   margin-left: 10px;
   border: solid transparent;
   border-color: rgba(51, 204, 153, 0);
-  border-top-color: #cccccc;
+  border-top-color: #fbd1fc;
   border-width: 10px;
   pointer-events: none;
   content: " ";
