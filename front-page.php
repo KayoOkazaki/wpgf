@@ -130,28 +130,37 @@
 					?>
 					<?php if ($customPosts): ?>
 					<?php foreach ($customPosts as $post): setup_postdata($post); ?>
-                        <div class="voice-in">
-                          <figure>
-							<!-- <a href="<?php //echo get_permalink( get_page_by_path('voice')->ID); ?>">  -->
-                            <a href="<?php the_permalink(); ?>">
-							 <!-- 投稿にアイキャッチ画像が割り当てられているかチェック -->
-				             <?php if(has_post_thumbnail()):?>
-				                <?php echo the_post_thumbnail(); ?>
-							 <?php endif; ?>
-                             <figcaption>
-                                <h3>
-                                    <?php echo post_custom('age'); ?>&nbsp
-                                    <?php echo post_custom('sex'); ?>&nbsp
-                                    <?php echo post_custom('job'); ?>
-                                </h3>
-                                <p><?php echo post_custom('content'); ?></p>
-                            </figcaption>
-                            </a>
+                        <div class="voice-in css-fukidashi">
+                          <figure class="text">
+									<!-- <a href="<?php //echo get_permalink( get_page_by_path('voice')->ID); ?>">  -->
+									 <!-- 投稿にアイキャッチ画像が割り当てられているかチェック -->
+						             <?php if(has_post_thumbnail()):?>
+						                <?php echo the_post_thumbnail(); ?>
+									 <?php endif; ?>
+		                             <figcaption>
+		                                <h3>
+		                                    <?php echo post_custom('age'); ?>&nbsp
+		                                    <?php echo post_custom('sex'); ?>&nbsp
+		                                    <?php echo post_custom('job'); ?>
+		                                </h3>
+		                                <p><?php echo post_custom('detail'); ?></p>
+		                            </figcaption>
                            </figure>
+                          <div class="fukidashi">
+						  	<p><?php echo post_custom('title'); ?></p>
+						  </div>
                         </div>
 					<?php endforeach; ?>
 					<?php endif; ?>
 					<?php wp_reset_postdata(); ?>
+                    </div>
+                    <div class="other">
+						<!--スラッグ名からパーマリンクを取得 -->
+                    	<?php
+						$page = get_page_by_path( 'trouble' );
+						$permalink = get_permalink( $page->ID );
+						?>
+                    	<p><a href="<?php echo $permalink;?>">その他お客様の声</a></p>
                     </div>
                 </section>
                 <section id="shop">
