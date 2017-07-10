@@ -6,7 +6,7 @@
             </ul>
         </div>
     </header>
-    <div id="contents" class="contents-news">
+    <div id="contents" class="contents-trouble">
        <!-- 戻るボタン -->
        <div id="page-top">
             <a id="move-page-top" href="#top"><i class="fa fa-chevron-circle-up fa-5x"></i></a>
@@ -14,12 +14,12 @@
        <div id="contentsInner">
             <div id="main">
 
-                <section id="news-section">
-                    <h2>What's New&nbsp;&nbsp;新着情報</h2>
+                <section id="trouble-section">
+                    <h2>Voice&nbsp;&nbsp;お客様の声</h2>
        				<!-- 投稿記事を取得 -->
             		<?php if(have_posts()):?>
   						<?php while(have_posts()):the_post();?>
-	                    	<article id="news01">
+	                    	<article id="voice01">
                         	<h3><?php the_title(); ?></h3>
                         	<span class="date">
                         		<i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;<?php the_time("Y-n-j"); ?>

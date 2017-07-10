@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Berkshire+Swash|Merienda+One|Norican|Pacifico");
+
 html, body {
   height: 100%;
   margin: 0;
@@ -142,7 +143,7 @@ header {
 
 #breadcrumb {
   clear: both;
-  padding: 10px;
+  padding-top: 10px;
 }
 
 #breadcrumb ul {
@@ -156,11 +157,23 @@ header {
   margin-right: 5px;
 }
 
-#breadcrumb ul li a {
+#breadcrumb ul li a
+ {
   padding-right: 15px;
   background-image: url(../images/breadcrumb_arrow.png);
   background-repeat: no-repeat;
   background-position: right center;
+}
+.other p a
+ {
+  padding-left: 15px;
+  background-image: url(../images/breadcrumb_arrow.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+.other p {
+  margin-top: 30px;
+  text-align: right;
 }
 
 #first {
@@ -262,14 +275,16 @@ section {
 /*********************/
 /*ｈ2　タイトルデザイン*/
 /*********************/
+.wf-mplus1p { font-family: "Mplus 1p"; }
+
 h2 {
   position: relative;
   padding: 1em 0;
   text-align: center;
   clear: both;
   font-size: 20px;
-  margin-top: 80px;
-  margin-bottom: 30px;
+  margin-top: 100px;
+  margin-bottom: 50px;
   font-weight: bold;
 }
 
@@ -294,7 +309,9 @@ h2::after {
   border-top: 1px solid #1c4467;
   border-bottom: 2px solid #1c4467;
 }
-
+/***********************/
+/*ｈ３　タイトルデザイン*/
+/***********************/
 h3 {
   font-weight: bold;
   font-size: 18px;

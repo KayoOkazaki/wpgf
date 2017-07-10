@@ -8,13 +8,25 @@
   margin-right: auto;
   font-weight: 700;
 }
+#top #news ul {
+  margin-top: 70px;
+}
 
 #top #news ul li {
   margin-top: 20px;
   padding: 0 10px 10px 160px;
-  border-bottom: 1px dotted #453319;
+/*  border-bottom: 1px dotted #453319;*/
   text-indent: -160px;
   list-style-type: none;
+}
+.news-date{
+	border-bottom: double;
+	border-bottom-color: #43ba38;
+}
+.news-title{
+	border-bottom: dotted;
+	border-width: 1px;
+	border-bottom-color: #43ba38;
 }
 
 .news-title a {
@@ -29,7 +41,7 @@
 }
 
 .news-date {
-  margin-right: 10px;
+  margin-right: 30px;
 }
 
 /*********************/
@@ -40,6 +52,10 @@
   /*  margin-left: auto;
   margin-right: auto;*/
   margin: 0 auto;
+}
+
+#trouble h2 {
+	margin-bottom: 0;
 }
 
 .trouble-wrap {
@@ -68,8 +84,12 @@
   /*float: left;*/
   transition: .8s;
 }
+.list li figcaption p a{
+  text-decoration: none;
+  color:#fff;
+}
 
-.list span {
+.list span.ttl {
   position: absolute;
   top: 30px;
   left: 45px;
@@ -171,31 +191,32 @@
   font-weight: bold;
 }
 
-.voice-wrap {
+#voice .voice-wrap {
+  margin-top: 70px;
   display: table;
 }
 
-.voice-in {
+#voice .voice-in {
   display: table-cell;
 }
 
-.voice-in img {
-  width: 40%;
+#voice .wp-post-image {
+  width: 150px;
+  height:150px;
   margin-left: auto;
   margin-right: auto;
   /*border-radius: 50%;*/
 }
 
-.voice-in figure {
+#voice .voice-in figure {
   margin: 0;
   padding: 0;
 }
 
-.voice-in figcaption {
+#voice .voice-in figcaption {
   word-wrap: break-all;
   width: 80%;
 }
-
 /*********************/
 /* アクセス・店舗ご案内  */
 /*********************/
