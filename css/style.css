@@ -118,11 +118,36 @@
 #trouble article .wrapper {
   display: flex;
 }
-
-#trouble .wrapper img {
-  width: 170px;
+#trouble .wrapper .article {
+  width: 80%;
 }
 
+#trouble .wrapper .thumb {
+  width: 20%;
+}
+/****************************/
+/* voice お客様の声 */
+/***************************/
+#voice {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#voice article {
+  margin-top: 20px;
+}
+
+#voice article .wrapper {
+  display: flex;
+}
+#voice .wrapper .article {
+  width: 80%;
+}
+
+#voice .wrapper .thumb {
+  width: 20%;
+}
 /****************************/
 /* blog ブログ */
 /***************************/

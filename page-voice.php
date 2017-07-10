@@ -2,31 +2,37 @@
         <div id="breadcrumb">
             <ul>
                 <li><a href="<?php echo home_url(); ?>">ホーム</a></li>
-                <li>ブログ</li>
+                <li>お客様の声</li>
             </ul>
         </div>
     </header>
-    <div id="contents">
+    <div id="contents" class="voice">
        <!-- 戻るボタン -->
        <div id="page-top">
             <a id="move-page-top" href="#top"><i class="fa fa-chevron-circle-up fa-5x"></i></a>
        </div>
        <div id="contentsInner">
             <div id="main">
-                <section id="trouble">
-                    <h2>Trouble&nbsp;&nbsp;体の悩みについて</h2>
+
+                <section id="voice">
+                    <h2>Voice&nbsp;&nbsp;お客様の声</h2>
 					<?php
 					 $args = array(
-							 'post_type' => 'trouble',
+							 'post_type' => 'voice',
 							 'post_status' => 'publish',
 							 'posts_per_page' => -1
 					 );
 					 $customPosts = get_posts($args);
 					 ?>
+       				<!-- 投稿記事を取得 -->
 					 <?php if ($customPosts): ?>
 						 <?php foreach ($customPosts as $post): setup_postdata( $post );?>
-		                    <article id="trouble01">
-		                        <h3><?php the_title(); ?></h3>
+	                    	<article id="voice01">
+	                        	<h3><?php the_title(); ?>&nbsp
+	                                <?php echo post_custom('age'); ?>&nbsp
+	                                <?php echo post_custom('sex'); ?>&nbsp
+	                                <?php echo post_custom('job'); ?>
+	                            </h3>
 		                        <div class="wrapper">
 									<div class="article">
 										<?php the_content(); ?>
@@ -39,11 +45,10 @@
 			                        </div>
 		                            <!-- <div class="image"><img src="<?php //echo get_template_directory_uri(); ?>/images/trouble01-150x150.jpg"></div> -->
 		                        </div>
-		                    </article>
+                    		</article>
 						<?php endforeach; ?>
 					 <?php endif; ?>
 				 <?php wp_reset_postdata(); ?>
-
                 </section>
             </div>
         </div>

@@ -14,16 +14,13 @@
        <div id="contentsInner">
             <div id="main">
 
-                <section id="trouble-section">
+                <section id="trouble">
                     <h2>Trouble&nbsp;&nbsp;体のお悩み</h2>
        				<!-- 投稿記事を取得 -->
             		<?php if(have_posts()):?>
   						<?php while(have_posts()):the_post();?>
 	                    	<article id="trouble01">
                         	<h3><?php the_title(); ?></h3>
-                        	<span class="date">
-                        		<i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;<?php the_time("Y-n-j"); ?>
-                        	</span>
 	                        <div>
 		                        <div class="article">
 		                            <?php the_content(); ?>

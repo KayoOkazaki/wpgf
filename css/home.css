@@ -94,10 +94,12 @@
   top: 30px;
   left: 45px;
   width: 145px;
-  color: #453319;
+/*  color: #453319;*/
+  color: #400000;
   font-size: 18px;
-  font-weight: bold;
-  text-shadow: 1px 2px 3px #808080;
+  font-weight: 900;
+ /* text-shadow: 1px 2px 3px #ffffff;*/
+  text-shadow: 0 -1px 1px #FFF, -1px 0 1px #FFF, 1px 0 1px #000;
 }
 
 /*ホバー時のキャプションエフェクト*/
@@ -123,7 +125,6 @@
   overflow: hidden;
   width: 320px;
   height: 180px;
-  /*width: 100%; height: 100%;*/
   border-radius: 10px;
 }
 

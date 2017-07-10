@@ -71,7 +71,7 @@
 						$args = array(
 							'post_type' => 'trouble',
 							'post_status' => 'publish',
-							'posts_per_page' => 4
+							'posts_per_page' => -1
 					);
 						$customPosts = get_posts($args);
 					?>
@@ -79,29 +79,27 @@
 					<?php if ($customPosts): ?>
 
 						<!--データの数分表示 -->
-						<?php $idx=0; ?>
 						<?php foreach ($customPosts as $post): setup_postdata($post); ?>
-						<?php $idx++; ?>
-                        <li class="list-mv05">
-                            <div class="cap">
-                                <figure>
-                                <!--
-                                    <a href="<?php //echo get_permalink( get_page_by_path('trouble')->ID); ?>#trouble0<?php //echo $idx;?>">
-                                 -->
-                                    <a href="<?php the_permalink(); ?>">
-									<!-- 投稿にアイキャッチ画像が割り当てられているかチェック -->
-					                <?php if(has_post_thumbnail()):?>
-					                	<?php echo the_post_thumbnail(array()); ?>
-									<?php endif; ?>
-                                    <span class="ttl"><?php the_title(); ?></span>
-                                    <figcaption>
-                                        <h3><?php the_title(); ?></h3>
-                                        <?php the_content('続きを読む...'); ?>
-                                    </figcaption>
-                                    </a>
-                                </figure>
-                            </div>
-                        </li>
+							<!--  Topページに表示するフラグがYesのみ表示する -->
+							<?php if (post_custom('primary') == "Yes"): ?>
+		                        <li class="list-mv05">
+		                            <div class="cap">
+		                                <figure>
+		                                    <a href="<?php the_permalink(); ?>">
+											<!-- 投稿にアイキャッチ画像が割り当てられているかチェック -->
+							                <?php if(has_post_thumbnail()):?>
+							                	<?php echo the_post_thumbnail(array(320,213)); ?>
+											<?php endif; ?>
+		                                    <span class="ttl"><?php the_title(); ?></span>
+		                                    <figcaption>
+		                                        <h3><?php the_title(); ?></h3>
+		                                        <?php echo wpautop( post_custom('intro').'続きを読む...');?>
+		                                    </figcaption>
+		                                    </a>
+		                                </figure>
+		                            </div>
+		                        </li>
+	                        <?php endif; ?>
                         <?php endforeach; ?>
 					<?php endif; ?>
 					<?php wp_reset_postdata(); ?>
@@ -124,14 +122,16 @@
 						$args = array(
 							'post_type' => 'voice',
 							'post_status' => 'publish',
-							'posts_per_page' => 3
+							'posts_per_page' => -1
 						);
 						$customPosts = get_posts($args);
 					?>
 					<?php if ($customPosts): ?>
-					<?php foreach ($customPosts as $post): setup_postdata($post); ?>
-                        <div class="voice-in css-fukidashi">
-                          <figure class="text">
+						<?php foreach ($customPosts as $post): setup_postdata($post); ?>
+							<!--  Topページに表示するフラグがYesのみ表示する -->
+							<?php if (post_custom('primary') == "Yes"): ?>
+		                        <div class="voice-in css-fukidashi">
+		                          <figure class="text">
 									<!-- <a href="<?php //echo get_permalink( get_page_by_path('voice')->ID); ?>">  -->
 									 <!-- 投稿にアイキャッチ画像が割り当てられているかチェック -->
 						             <?php if(has_post_thumbnail()):?>
@@ -143,21 +143,22 @@
 		                                    <?php echo post_custom('sex'); ?>&nbsp
 		                                    <?php echo post_custom('job'); ?>
 		                                </h3>
-		                                <p><?php echo post_custom('detail'); ?></p>
+		                                <p><?php the_content(); ?></p>
 		                            </figcaption>
-                           </figure>
-                          <div class="fukidashi">
-						  	<p><?php echo post_custom('title'); ?></p>
-						  </div>
-                        </div>
-					<?php endforeach; ?>
+		                           </figure>
+		                          <div class="fukidashi">
+								  	<p><?php echo post_custom('title'); ?></p>
+								  </div>
+		                        </div>
+	                       <?php endif; ?>
+						<?php endforeach; ?>
 					<?php endif; ?>
 					<?php wp_reset_postdata(); ?>
                     </div>
                     <div class="other">
 						<!--スラッグ名からパーマリンクを取得 -->
                     	<?php
-						$page = get_page_by_path( 'trouble' );
+						$page = get_page_by_path( 'voice' );
 						$permalink = get_permalink( $page->ID );
 						?>
                     	<p><a href="<?php echo $permalink;?>">その他お客様の声</a></p>
