@@ -69,7 +69,7 @@ register_post_type(
  * カスタム投稿タイプ：施術料金メニュー（カスタムテンプレート使用）
  */
 register_post_type(
-		'pricelist1',
+		'menu',
 		array(
 				'labels' => array(
 						'name' => '施術料金メニュー',
@@ -84,7 +84,7 @@ register_post_type(
  * カスタム投稿タイプ：その他料金メニュー（カスタムテンプレート使用）
  */
 register_post_type(
-		'pricelist2',
+		'menu2',
 		array(
 				'labels' => array(
 						'name' => 'その他料金メニュー',
@@ -110,3 +110,18 @@ register_post_type(
 				'supports' => array('title', 'editor','thumbnail')
 		)
 );
+/*
+ * カスタム投稿タイプ：よくある質問（カスタムテンプレート使用）
+ */
+register_post_type(
+		'faq2',
+		array(
+				'labels' => array(
+						'name' => 'よくある質問２',
+						'add_new_item' => '追加：よくある質問２',
+						'edit_item' => '編集：よくある質問２'
+				),
+				'public' => true,
+				'supports' => array('title', 'editor','thumbnail')
+		)
+		);

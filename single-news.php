@@ -17,8 +17,8 @@
                 <section id="news-section">
                     <h2>What's New&nbsp;&nbsp;新着情報</h2>
        				<!-- 投稿記事を取得 -->
-            		<?php if(have_posts()):?>
-  						<?php while(have_posts()):the_post();?>
+           		<?php if(have_posts()):?>
+	  						<?php while(have_posts()):the_post();?>
 	                    	<article id="news01">
                         	<h3><?php the_title(); ?></h3>
                         	<span class="date">
