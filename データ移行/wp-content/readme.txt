@@ -2,5 +2,7 @@
 wp-contentフォルダへ以下のフォルダごと上書きコピーする。
 
 plugins   WordPressプラグインのデータ
-upgrade   アップロードしたメディア
+upgrade   アップグレードしたWPのデータ
+uploads   アップロードしたメディア
+
 
