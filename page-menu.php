@@ -13,35 +13,64 @@
        </div>
        <div id="contentsInner">
             <div id="main">
-                <section id="price">
+                <section id="pricelist">
                     <h2>Menu&ensp;施術料金</h2>
-                    <table><caption><h3>整体メニュー</h3></caption>
-                        <tr><th>部位</th><th>時間</th><th>料金</th></tr>
-                        <tr><th id="h">上半身（首・肩・背中）</th><td>60分</td><td>4,000円</td></tr>
-                        <tr><th>下半身（腰・脚・足裏）</th><td>60分</td><td>4,000円</td></tr>
-                        <tr><th rowspan="2">全身（上半身・下半身）</th><td>60分</td><td>4,000円</td></tr>
-                        <tr><td>90分</td><td>6,000円</td></tr>
-                        <tr><th>延長</th><td>30分</td><td>2,000円</td></tr>
-                    </table>
-                    <table><caption><h3>レイキ・ヒーリング（整体をお受けの方のみ）</h3></caption>
-                        <tr><th id="h">時間</th><th>料金</th></tr>
-                        <tr><th>60分</th><td>1,000円</td></tr>
-                        <tr><th>90分</th><td>1,500円</td></tr>
-                        <tr><th>延長30分</th><td>500円</td></tr>
-                    </table>
-                    <table><caption><h3>フラワーエッセンス（整体をお受けの方のみ）</h3></caption>
-                        <tr><th>内容</th><th>料金</th></tr>
-                        <tr><th id="h">カウンセリング+調合</th><td>1,500円</td></tr>
-                        <tr><th>調合（+ボトル代）</th><td>700円</td></tr>
-                        <tr><th>調合のみ（ボトルお持込）</th><td>500円</td></tr>
-                    </table>
-                    <table><caption><h3>レイキ・アチューメント伝授　ただいま準備中！</h3></caption>
-                        <tr><th>コース</th><th>時間</th><th>料金</th></tr>
-                        <tr><th id="h">ファーストディグリー</th><td>準備中</td><td>準備中</td></tr>
-                        <tr><th>セカンドディグリー</th><td>準備中</td><td>準備中</td></tr>
-                        <tr><th>サードディグリー</th><td>準備中</td><td>準備中</td></tr>
-                        <tr><th>ティーチャーズ<br>ディグリー</th><td>準備中</td><td>準備中</td></tr>
-                    </table>
+
+										<?php
+										 $args = array(
+												 'post_type' => 'menu',
+												 'post_status' => 'publish',
+												 'posts_per_page' => -1
+										 );
+										 $customPosts = get_posts($args);
+
+										 //投稿の古い順番に並び替え
+										 sort($customPosts);
+
+										 ?>
+										<?php if ($customPosts): ?>
+										 <?php foreach ($customPosts as $post): setup_postdata( $post );?>
+												<!-- メニュータイトルをセット -->
+                    <table><caption><h3><?php the_title(); ?></h3></caption>
+
+												<!-- ************************************************************* -->
+												<!--                                                               -->
+												<!-- Smart Custom Fields 使用                                      -->
+												<!--                                                               -->
+												<!-- ************************************************************* -->
+
+												<?php
+												//時間表示を別セルに分ける場合
+												if (SCF::get('divie_flg')=="Yes") {
+
+														echo "<tr><th id='h'>内容</th><th>時間</th><th>料金</th></tr>";
+
+
+																//グループ内で回す
+																$field_group = SCF::get( 'menu_group' );
+																foreach ( $field_group as $fields ) {
+																		echo "<tr><th>". esc_html( $fields['menu_name'] ) . "</th><td>". esc_html( $fields['time'] ) . "</th><td>". esc_html( $fields['price'] ) . "</td></tr>";
+																}
+
+												//時間表示を別セルに分けない場合
+												} else {
+
+														echo "<tr><th id='h'>内容</th><th>料金</th></tr>";
+
+
+															//グループ内で回す
+															$field_group = SCF::get( 'menu_group' );
+															foreach ( $field_group as $fields ) {
+
+																$time = esc_html( $fields['time']) == "なし" ? "" : esc_html( $fields['time']);
+
+																echo "<tr><th>". esc_html( $fields['menu_name'] ) . $time. "</th><td>". esc_html( $fields['price'] ) . "</td></tr>";
+															}
+												}
+												echo "</table>";
+											 ?>
+										<?php endforeach; ?>
+								 <?php endif; ?>
                 </section>
             </div>
         </div>

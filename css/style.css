@@ -36,42 +36,45 @@
 /****************************/
 /* 施術料金 */
 /***************************/
-#price {
+#pricelist {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
 
-#price table {
+#pricelist table {
   width: 70%;
   margin-left: auto;
   margin-right: auto;
 }
 
-#price table #h {
+#pricelist table #h {
   width: 30%;
 }
 
-#price table th {
+#pricelist table th {
   background-color: #B0FFA9;
   background-color: #b7ffb7;
 }
 
-#price table td {
+#pricelist table td {
   background-color: #fff;
 }
 
 /****************************/
 /* よくある質問 */
 /***************************/
-#QandA-1 {
-  width: 100%;
+#QandA {
+  width: 80%;
   font-family: メイリオ;
   font-size: 14px;
+  margin-left: auto;
+  margin-right: auto;
+
   /*全体のフォントサイズ*/
 }
 
-#QandA-1 dt {
+#QandA dt {
   background: #B0FFA9;
   /* 「Q」タイトルの背景色 */
   background: #b7ffb7;
@@ -80,25 +83,25 @@
   border-radius: 25px;
 }
 
-#QandA-1 dt:before {
+#QandA dt:before {
   content: "Q.";
   font-weight: bold;
   margin-right: 8px;
 }
 
-#QandA-1 dd {
+#QandA dd {
   margin: 24px 16px 40px 32px;
   line-height: 140%;
   text-indent: -24px;
 }
 
-#QandA-1 dd:before {
+#QandA dd:before {
   content: "A.";
   font-weight: bold;
   margin-right: 8px;
 }
 
-#QandA-1 .strong {
+#QandA .strong {
   font-weight: bold;
 }
 

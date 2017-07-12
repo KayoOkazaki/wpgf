@@ -13,7 +13,7 @@
        </div>
        <div id="contentsInner">
             <div id="main">
-                <section id="price">
+                <section id="QandA">
                     <h2>Q and A&nbsp;&nbsp;よくある質問</h2>
                     <div id="QandA-1">
                         <dl>

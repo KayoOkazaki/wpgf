@@ -19,7 +19,7 @@
 					 $args = array(
 							 'post_type' => 'trouble',
 							 'post_status' => 'publish',
-							 'posts_per_page' => -1
+							 'posts_per_page' => 4
 					 );
 					 $customPosts = get_posts($args);
 					 ?>
@@ -42,6 +42,24 @@
 		                    </article>
 						<?php endforeach; ?>
 					 <?php endif; ?>
+					<div class="pagination">
+
+					<!-- ページネーション -->
+					<?php
+							global $wp_query;
+							$big = 999999999;
+							echo paginate_links( array(
+								'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+								'format' => '?paged=%#%',
+								'current' => max( 1, get_query_var('paged') ),
+								'total' => $wp_query->max_num_pages,
+								'prev_next' => true,
+								'prev_text' => "次へ"
+							) );
+					?>
+
+				</div>
+
 				 <?php wp_reset_postdata(); ?>
 
                 </section>

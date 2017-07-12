@@ -66,7 +66,7 @@ register_post_type(
 		)
 );
 /*
- * カスタム投稿タイプ：施術料金メニュー（カスタムテンプレート使用）
+ * カスタム投稿タイプ：施術料金メニュー（SmartCustomFields使用）
  */
 register_post_type(
 		'menu',
@@ -81,7 +81,7 @@ register_post_type(
 		)
 );
 /*
- * カスタム投稿タイプ：その他料金メニュー（カスタムテンプレート使用）
+ * カスタム投稿タイプ：その他料金メニュー（SmartCustomFields使用）
  */
 register_post_type(
 		'menu2',
