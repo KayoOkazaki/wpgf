@@ -158,29 +158,51 @@
                     <div class="other">
 						<!--スラッグ名からパーマリンクを取得 -->
                     	<?php
-						$page = get_page_by_path( 'voice' );
-						$permalink = get_permalink( $page->ID );
-						?>
+												$page = get_page_by_path( 'voice' );
+												$permalink = get_permalink( $page->ID );
+											?>
                     	<p><a href="<?php echo $permalink;?>">その他お客様の声</a></p>
                     </div>
                 </section>
                 <section id="shop">
                     <h2>Access アクセス・店舗ご案内</h2>
+										<?php
+										 $args = array(
+												 'post_type' => 'shop',
+												 'post_status' => 'publish',
+												 'posts_per_page' => -1
+										 );
+										 $customPosts = get_posts($args);
+
+										 //投稿の古い順番に並び替え
+										 sort($customPosts);
+
+										 ?>
+										<?php if ($customPosts): ?>
+										 <?php foreach ($customPosts as $post): setup_postdata( $post );?>
+
+												<!-- ************************************************************* -->
+												<!--                                                               -->
+												<!-- Smart Custom Fields 使用                                      -->
+												<!--                                                               -->
+												<!-- ************************************************************* -->
                         <div class="shop-wrap">
                             <div id="map" style="width:100%;">
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d202.50441829454365!2d139.6976860389457!3d35.69987795107207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188d2ecc7f20bf%3A0xb02c7c100ded27a9!2z44CSMTY5LTAwNzMg5p2x5Lqs6YO95paw5a6_5Yy655m-5Lq655S677yR5LiB55uu!5e0!3m2!1sja!2sjp!4v1498618680391" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            		<?php echo SCF::get('map_link');?>
                             </div>
                             <div id="info">
                             <table>
                             <caption>店舗情報</caption>
-                            <tr><th colspan="2">マッサージ＆リラクゼーションサロン <?php bloginfo('title'); ?></th></tr>
-                                <tr><th>定休日</th><td>土日・祝日</td></tr>
-                                <tr><th>店舗の場所</th><td>ＪＲ中央本線 大久保駅南口より徒歩5分　詳しくはご予約の際ご案内いたします</td></tr>
-                                <tr><th>営業時間</th><td>10：00～18：00 （完全予約制）</td></tr>
-                                <tr><th>予約TEL</th><td>080-1234-5678</td></tr>
+                            <tr><th colspan="2"><?php echo SCF::get('shop_kind');?>&nbsp;<?php echo SCF::get('shopname');?></th></tr>
+                                <tr><th>定休日</th><td><?php echo SCF::get('holiday');?></td></tr>
+                                <tr><th>店舗の場所</th><td><?php echo SCF::get('place');?></td></tr>
+                                <tr><th>営業時間</th><td><?php echo SCF::get('business_hours');?></td></tr>
+                                <tr><th>予約TEL</th><td><?php echo SCF::get('tel_no');?></td></tr>
                             </table>
                             </div>
                         </div>
+                       <?php endforeach;?>
+                     <?php endif;?>
                 </section>
                 <section id="staff">
                     <h2>Staff スタッフ紹介</h2>

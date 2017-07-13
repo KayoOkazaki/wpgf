@@ -80,21 +80,7 @@ register_post_type(
 				'supports' => array('title', 'editor','thumbnail')
 		)
 );
-/*
- * カスタム投稿タイプ：その他料金メニュー（SmartCustomFields使用）
- */
-register_post_type(
-		'menu2',
-		array(
-				'labels' => array(
-						'name' => 'その他料金メニュー',
-						'add_new_item' => '追加：その他料金メニュー',
-						'edit_item' => '編集：その他料金メニュー'
-				),
-				'public' => true,
-				'supports' => array('title', 'editor','thumbnail')
-		)
-		);
+
 /*
  * カスタム投稿タイプ：よくある質問（カスタムテンプレート使用）
  */
@@ -124,4 +110,19 @@ register_post_type(
 				'public' => true,
 				'supports' => array('title', 'editor','thumbnail')
 		)
-		);
+);
+/*
+ * カスタム投稿タイプ：店舗情報（SmartCustomFields使用）
+ */
+register_post_type(
+		'shop',
+		array(
+				'labels' => array(
+						'name' => '店舗情報',
+						'add_new_item' => '追加：店舗情報',
+						'edit_item' => '編集：店舗情報'
+				),
+				'public' => true,
+				'supports' => array('title', 'editor','thumbnail')
+		)
+);
