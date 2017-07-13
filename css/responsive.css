@@ -1,0 +1,940 @@
+@charset "UTF-8";
+
+/****************************************************
+/*  グローバルナビ　デザイン
+*****************************************************/
+.mainimg {
+	width:80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.intro_a h1{
+  font-size: 40px;
+}
+.intro_a p {
+ font-size: 13px;
+}
+
+header {
+  margin-bottom: 10px;
+}
+
+#globalNavi {
+  width: 100%;
+}
+
+#globalNavi ul li a {
+  background: #453319;
+  width: 20%;
+  float: left;
+  padding: 20px 0;
+  text-align: center;
+  color: #fff;
+  text-decoration: none;
+  border-right: 1px solid #fff;
+  box-sizing: border-box;
+  font-size:10px;
+}
+
+#globalNavi ul li a:hover {
+  background: #2f7f26;
+  transition: 0.6s;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000;
+}
+
+#breadcrumb {
+  clear: both;
+  padding-top: 10px;
+}
+
+#breadcrumb ul {
+  clear: both;
+  list-style-type: none;
+  padding: 10px;
+}
+
+#breadcrumb ul li {
+  display: inline;
+  margin-right: 5px;
+}
+
+#breadcrumb ul li a
+ {
+  padding-right: 15px;
+  background-image: url(../images/breadcrumb_arrow.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.other p a
+ {
+  padding-left: 15px;
+  background-image: url(../images/breadcrumb_arrow.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+.other p {
+  margin-top: 30px;
+  text-align: right;
+}
+
+#first {
+  position: absolute;
+}
+
+#ddwn-menu {
+  width: 100%;
+  /*通常表示ではドロップダウンメニューを非表示*/
+  display: none;
+  /*親要素のbodyに固定表示*/
+  position: relative;
+  top: 58%;
+  left: 80%;
+}
+
+#ddwn-menu li a {
+  clear: both;
+}
+
+#ddwn-menu li ul li a {
+  background: #9fb7d4;
+}
+
+#ddwn a:hover {
+  background-color: red;
+}
+
+#globalNavi .navi .active {
+  background: #2f7f26;
+}
+
+#breadcrumb ul:first-child:before {
+  font-family: FontAwesome;
+  content: '\f015';
+  /* homeアイコンのunicode */
+}
+
+#breadcrumb {
+  clear: both;
+  padding: 10px;
+}
+
+#breadcrumb ul {
+  clear: both;
+  list-style-type: none;
+  padding: 10px;
+}
+
+#breadcrumb ul li {
+  display: inline;
+  margin-right: 5px;
+  font-size:11px;
+}
+
+#breadcrumb ul li a {
+  padding-right: 15px;
+  background-image: url(../images/breadcrumb_arrow.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+
+#breadcrumb ul:first-child:before {
+  font-family: FontAwesome;
+  content: '\f015';
+  /* homeアイコンのunicode */
+}
+/****************************************************
+/*  ページトップアイコン　デザイン
+*****************************************************/
+#page-top {
+  display: none;
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  z-index:-1;
+
+}
+
+#move-page-top {
+  color: #555555;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+#move-page-top:hover {
+  color: #777777;
+}
+/****************************************************
+/*  メインコンテンツ　デザイン
+*****************************************************/
+section {
+  margin-bottom: 50px;
+}
+
+/*********************/
+/*ｈ2　タイトルデザイン*/
+/*********************/
+.wf-mplus1p { font-family: "Mplus 1p"; }
+
+h2 {
+  position: relative;
+  padding: 1em 0;
+  text-align: center;
+  clear: both;
+  font-size: 15px;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+h2::before,
+h2::after {
+  position: absolute;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 6px;
+  box-sizing: border-box;
+}
+
+h2::before {
+  top: 0;
+  border-top: 2px solid #1c4467;
+  border-bottom: 1px solid #1c4467;
+}
+
+h2::after {
+  bottom: 0;
+  border-top: 1px solid #1c4467;
+  border-bottom: 2px solid #1c4467;
+}
+/***********************/
+/*ｈ３　タイトルデザイン*/
+/***********************/
+h3 {
+  font-weight: bold;
+  font-size: 14px;
+  border-bottom: solid 3px skyblue;
+  position: relative;
+  margin: 50px 0 20px 0;
+}
+
+h3:after {
+  position: absolute;
+  content: " ";
+  display: block;
+  border-bottom: solid 3px #ffc778;
+  bottom: -3px;
+  width: 30%;
+}
+
+p {
+  font-weight: normal;
+}
+
+/*********************/
+/* コンテンツ */
+/*********************/
+dl dt {font-size: 12px;}
+dl dd {font-size: 12px;}
+table tr th { font-size:12px; padding: 5px; text-align: center;}
+table tr td { font-size:12px; padding: 5px; text-align: center;}
+
+/*********************/
+/* フッター */
+/*********************/
+footer {
+  margin-top: 10px;
+  padding: 20px;
+  text-align: center;
+  background-color: #453319;
+  color: #fff;
+  width: 98%;
+  margin-left: auto;
+  margin-right: auto;
+
+}
+footer .container {
+	text-align: center;
+}
+
+footer #foot {
+  margin-top: 10px;
+}
+
+footer #foot p {
+  margin: 0;
+  font-size:12px;
+}
+footer #foot address {
+  font-size:13px;
+
+}
+
+.flat_ss {
+  color: #484848;
+  display: inline-block;
+  height: 50px;
+  height: 30px;
+  font-size: 25px;
+  line-height: 50px;
+  line-height: 30px;
+  vertical-align: middle;
+  background: #FFEB9E;
+  text-decoration: none;
+  margin: 16px;
+  margin: 10px;
+  border-radius: 15px;
+  /*追記*/
+}
+
+.flat_ss .iconback {
+  display: inline-block;
+  width: 50px;
+  width: 30px;
+  height: 50px;
+  height: 30px;
+  text-align: center;
+  color: white;
+  border-radius: 15px;
+  /*追記*/
+}
+
+.flat_ss .iconback .fa {
+  font-size: 25px;
+  font-size: 18px;
+  line-height: 50px;
+  line-height: 30px;
+}
+
+.flat_ss .iconback .fa {
+  transition: .3s;
+}
+
+.flat_ss .btnttl {
+  display: inline-block;
+  width: 120px;
+  width: 82px;
+  font-size: 18px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.flat_ss .tw {
+  background: #1da1f3;
+}
+
+.flat_ss .fb {
+  background: #3b75d4;
+}
+
+.flat_ss .fdly {
+  background: #7ece46;
+}
+
+.flat_ss .pkt {
+  background: #fd7171;
+}
+
+.flat_ss:hover .iconback .fa {
+  transform: rotateX(360deg);
+}
+
+/*********************/
+/* News 一覧 */
+/*********************/
+#top #news {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 700;
+}
+#top #news ul {
+  margin-top: 70px;
+}
+
+#top #news ul li {
+  margin-top: 20px;
+  padding: 0 10px 10px 160px;
+  text-indent: -160px;
+  list-style-type: none;
+  font-size:12px;
+}
+.news-date{
+	border-bottom: double;
+	border-bottom-color: #43ba38;
+}
+.news-title{
+	border-width: 1px;
+	border-bottom: 1px dotted #43ba38;
+}
+
+.news-title a {
+  color: black;
+  text-decoration: none;
+}
+
+.news-title a:hover {
+  color: #43ba38;
+  transition: 0.6s;
+  text-decoration: none;
+}
+
+.news-date {
+  margin-right: 30px;
+}
+
+/*********************/
+/* お悩み一覧  */
+/*********************/
+#trouble {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+ /* margin: 0 auto;*/
+}
+
+#trouble h2 {
+	margin-bottom: 0;
+}
+
+.trouble-wrap {
+  display: table;
+}
+
+.list-mv05 {
+	margin-right: 0;
+	margin-left: 0;
+}
+
+/*.list-mv05 {display:inline-block; }*/
+/*画像中文字デザイン*/
+.list {
+  /*    margin:5px;
+    padding:5px;
+*/
+  /*width:320px; height:180px;*/
+}
+
+.list li {
+  transition: .8s;
+}
+.list li figcaption p a{
+  text-decoration: none;
+  color:#fff;
+}
+
+.list span.ttl {
+  position: absolute;
+  top: 30px;
+  left: 45px;
+  width: 145px;
+  color: #400000;
+  font-size: 18px;
+  font-weight: 900;
+ /* text-shadow: 1px 2px 3px #ffffff;*/
+  text-shadow: 0 -1px 1px #FFF, -1px 0 1px #FFF, 1px 0 1px #000;
+}
+
+/*ホバー時のキャプションエフェクト*/
+.cap {
+  position: relative;
+  width: 50%;
+}
+
+.cap h3 {
+  color: white;
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.cap p {
+  color: white;
+  font-size: 12px;
+}
+
+.cap figure {
+  position: relative;
+  overflow: hidden;
+  width: 320px;
+  height: 180px;
+  border-radius: 10px;
+}
+
+.cap figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  /*width: 320px; height:180px;*/
+  background: rgba(0, 0, 0, 0.6);
+  -webkit-transition: .3s;
+  transition: .3s;
+  opacity: 0;
+}
+
+.cap figcaption h3,
+.cap figcaption p {
+  position: absolute;
+  left: -100%;
+  width: 260px;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.cap figcaption h3 {
+  top: 30px;
+}
+
+.cap figcaption p {
+  top: 75px;
+}
+
+.cap figure:hover figcaption {
+  opacity: 1;
+}
+
+.cap figure:hover figcaption h3,
+.cap figure:hover figcaption p {
+  left: 20px;
+}
+
+.cap figure:hover figcaption h3 {
+  -webkit-transition-delay: .2s;
+  transition-delay: .2s;
+}
+
+.cap figure:hover figcaption p {
+  -webkit-transition-delay: .5s;
+  transition-delay: .5s;
+}
+
+/*********************/
+/* お客様の声  */
+/*********************/
+#voice {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#voice h3 {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#voice .voice-wrap {
+  margin-top: 50px;
+}
+
+#voice .voice-in {
+  display: table-cell;
+  display: block;
+}
+
+#voice .wp-post-image {
+  width: 150px;
+  height:150px;
+  margin-left: auto;
+  margin-right: auto;
+  /*border-radius: 50%;*/
+}
+
+#voice .voice-in figure {
+  margin: 0;
+  padding: 0;
+}
+
+#voice .voice-in figcaption {
+  word-wrap: break-all;
+  width: 80%;
+}
+
+/*ホバー時に吹き出し表示*/
+.css-fukidashi {
+  padding: 0;
+  margin: 0;
+  position: relative;
+
+}
+.text {
+  position: relative;
+
+}
+.fukidashi {
+  display: none;
+  width: 150px;
+  position: absolute;
+  top:-20px;
+  left:95px;
+  padding: 10px;
+  border-radius: 20px;
+  background: #fbd1fc;
+  color: #333333;
+  font-weight: bold;
+}
+.fukidashi:after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  left: 7px;
+  bottom: -19px;
+  margin-left: 10px;
+  border: solid transparent;
+  border-color: rgba(51, 204, 153, 0);
+  border-top-color: #fbd1fc;
+  border-width: 10px;
+  pointer-events: none;
+  content: " ";
+}
+.text:hover + .fukidashi {
+  display: block;
+}
+
+/*********************/
+/* アクセス・店舗ご案内  */
+/*********************/
+#shop {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#info table {
+  /*margin-top:20px;*/
+  width: 80%;
+}
+
+caption {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#info table th {
+  background-color: #453319;
+  padding: 10px;
+  color: #fff;
+  border-color: #fff;
+}
+
+#info table td {
+  background-color: #fff;
+  padding: 10px;
+}
+
+/*********************/
+/* スタッフ紹介 */
+/*********************/
+#staff {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#staff h3 {
+  margin: 5px;
+}
+
+.staff-wrap {
+  display: table;
+  width: 100%;
+}
+
+.staff-in {
+  display: table-cell;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.staff-image {
+  width: 90%;
+}
+
+.staff-intro {
+  width: 90%;
+}
+
+.staff-image img {
+  width: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%;
+}
+
+.staff-nm-j {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/****************************/
+/* first 初めての方へ */
+/***************************/
+/* Green Forestとは */
+#aboutus {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#aboutus article {
+  margin-top: 20px;
+  font-size:13px;
+}
+
+#aboutus .wrapper {
+   flex-direction: column-reverse;
+}
+
+#aboutus .wrapper img {
+  width: 170px;
+}
+
+#case {
+  text-indent: 30px;
+  list-style: none;
+  font-size:13px;
+  text-indent:0;
+}
+
+#case li:before {
+  font-family: FontAwesome;
+  content: '\f086';
+  /* アイコンのunicode */
+}
+#aboutus04 img {
+	width:100%;
+}
+
+
+
+/****************************/
+/* 施術料金 */
+/***************************/
+#pricelist {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#pricelist table {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#pricelist table #h {
+  width: 30%;
+}
+
+#pricelist table th {
+  background-color: #B0FFA9;
+  background-color: #b7ffb7;
+}
+
+#pricelist table td {
+  background-color: #fff;
+}
+
+/****************************/
+/* よくある質問 */
+/***************************/
+#QandA {
+  width: 80%;
+  font-family: メイリオ;
+  font-size: 14px;
+  margin-left: auto;
+  margin-right: auto;
+
+  /*全体のフォントサイズ*/
+}
+
+#QandA dt {
+  background: #B0FFA9;
+  /* 「Q」タイトルの背景色 */
+  background: #b7ffb7;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 25px;
+}
+
+#QandA dt:before {
+  content: "Q.";
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+#QandA dd {
+  margin: 24px 16px 40px 32px;
+  line-height: 140%;
+  text-indent: -24px;
+}
+
+#QandA dd:before {
+  content: "A.";
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+#QandA .strong {
+  font-weight: bold;
+}
+
+/****************************/
+/* trouble トラブルの原因 */
+/***************************/
+#trouble {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#trouble article {
+  margin-top: 20px;
+}
+#trouble .wrapper {
+  /*display: flex;*/
+   flex-direction: column-reverse;
+
+}
+#trouble .wrapper .article {
+  width: 100%;
+}
+
+#trouble .wrapper .thumb {
+  width: 100%;
+}
+/****************************/
+/* voice お客様の声 */
+/***************************/
+#voice {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#voice article {
+  margin-top: 20px;
+}
+
+#voice article .wrapper {
+  display: flex;
+}
+#voice .wrapper .article {
+  width: 80%;
+}
+
+#voice .wrapper .thumb {
+  width: 20%;
+}
+/****************************/
+/* blog ブログ */
+/***************************/
+/*#blog {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#blog article {
+  margin-top: 20px;
+}
+
+#blog article .wrapper {
+  display: flex;
+}
+
+#blog .wrapper img {
+  width: 170px;
+}
+*/
+/****************************/
+/* News 新着情報 */
+/***************************/
+#news-section {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 450px;
+}
+
+#news-section article {
+  margin-top: 20px;
+}
+
+#news-section h2,
+#news-section h3,
+#news-section span {
+	clear:both;
+}
+
+#news-section .article {
+	width: 100%;
+	/*float: left;*/
+	/*display:block;*/
+}
+#news-section .thumb {
+	width: 100%;
+	/*float: right;*/
+	/*display:block;*/
+	margin-bottom: 30px;
+}
+/*
+#news-section .thumb img {
+  width: 200px;
+}*/
+
+#news-section .date {
+  width: 20%;
+  background: #cccccc;
+  /* 背景色 */
+  font-weight: bold;
+  padding: 0 10px;
+  border-radius: 25px;
+}
+
+/****************************/
+/* contact お問合せ・予約 */
+/***************************/
+#contact #mailform {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contact #mailform ul {
+  list-style-type: square;
+}
+
+#contact #mailform ul li {
+  margin-left: 30px;
+  list-style-type: square;
+
+}
+
+#contact #mailform strong {
+  color: red;
+}
+
+#contact #mailform table tr:last-child {
+  text-align: center;
+}
+#form {
+	padding: 30px;
+	margin-top: 10px;
+}
+#form .wpcf7-form-control-wrap input {
+	margin-bottom: 12px;
+}
+

@@ -33,7 +33,7 @@
                             <a href="http://www.afeej.org/fe/">フラワーエッセンス普及会より引用</a></p>
                             <div><img src="<?php echo get_template_directory_uri(); ?>/images/cropped-mainimg-300x300.jpg"></div>
                         </div>
-                             <p>フラワーエッセンスは、改善したい感情や心の状態に合ったエッセンスを選び調合して使います。<br>例えば以下のような時におすすめです！</p>
+                             <p>フラワーエッセンスは、改善したい感情や心の状態に合ったエッセンスを選び調合して使います。<br>例えば以下のような時におすすめです！</p><br>
                                 <ul id="case">
                                     <li> 仕事が忙しく、なかなか休めない</li>
                                     <li> 仕事のことで頭が休まらない、色々考えてしまう</li>
@@ -56,7 +56,7 @@
                             <div><img src="<?php echo get_template_directory_uri(); ?>/images/healing-150x150.jpg" target="_blank"></div>
                         </div>
                     </article>
-                    <article>
+                    <article id="aboutus04">
                         <h3>ＪＲ大久保駅南口から徒歩10分！</h3>
                         <p>初めての方はご予約の際に当サロンの地図をお送りいたします。当店までの道のりがご不安な方はお電話をいただきましたら、大久保駅南口改札までお迎えに上がります。</p>
                             <div><img src="<?php echo get_template_directory_uri(); ?>/images/m_ookubo.gif" alt=""><figcaption>大久保駅構内図</figcaption></div>

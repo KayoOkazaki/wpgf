@@ -17,47 +17,47 @@
                       <div>
                         <ul>
                         <?php
-							$args = array(
-								'post_type' => 'news',
-								'post_status' => 'publish',
-								'posts_per_page' => 5
-							);
-							$customPosts = get_posts($args);
-						?>
-						<!--新着情報があれば -->
-						<?php if ($customPosts): ?>
+													$args = array(
+														'post_type' => 'news',
+														'post_status' => 'publish',
+														'posts_per_page' => 5
+													);
+													$customPosts = get_posts($args);
+												?>
+												<!--新着情報があれば -->
+												<?php if ($customPosts): ?>
 
-							<!--新着情報をデータの数分表示 -->
-							<?php foreach ($customPosts as $post): setup_postdata($post); ?>
+													<!--新着情報をデータの数分表示 -->
+													<?php foreach ($customPosts as $post): setup_postdata($post); ?>
 
                             <li>
                             	<span class="news-date"><time datetime="<?php echo get_the_date('Y-m-d'); ?>">&nbsp&nbsp&nbsp<?php echo get_the_date('Y-m-d'); ?></time>&nbsp&nbsp&nbsp</span>
-								<span class="news-title">
-								<!--新着情報本文が存在すれば -->
-								<?php if(get_the_content()): ?>
+															<span class="news-title">
+															<!--新着情報本文が存在すれば -->
+															<?php if(get_the_content()): ?>
 
-									<!--新着情報タイトルと本文リンク情報を表示 -->
-									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+																<!--新着情報タイトルと本文リンク情報を表示 -->
+																<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 
-								<!--上記以外の時 -->
-								<?php else: ?>
+															<!--上記以外の時 -->
+															<?php else: ?>
 
-									<!--新着情報タイトルのみ表示 -->
-									<?php the_title(); ?>
-								<?php endif; ?>
-								</span>
-							</li>
-							<?php endforeach; ?>
-						<?php endif; ?>
-						<?php wp_reset_postdata(); ?>
+																<!--新着情報タイトルのみ表示 -->
+																<?php the_title(); ?>
+															<?php endif; ?>
+															</span>
+														</li>
+														<?php endforeach; ?>
+													<?php endif; ?>
+													<?php wp_reset_postdata(); ?>
                     	</ul>
                     </div>
                     <div class="other">
-						<!--スラッグ名からパーマリンクを取得 -->
+											<!--スラッグ名からパーマリンクを取得 -->
                     	<?php
-						$page = get_page_by_path( 'news' );
-						$permalink = get_permalink( $page->ID );
-						?>
+												$page = get_page_by_path( 'news' );
+												$permalink = get_permalink( $page->ID );
+												?>
                     	<p><a href="<?php echo $permalink;?>">その他のお知らせ</a></p>
                     </div>
                 </section>
@@ -66,51 +66,51 @@
                     <div class="trouble-wrap">
                     <ul class="list">
 
-					<!--体の悩み記事の表示 -->
-                    <?php
-						$args = array(
-							'post_type' => 'trouble',
-							'post_status' => 'publish',
-							'posts_per_page' => -1
-					);
-						$customPosts = get_posts($args);
-					?>
-					<!--体の悩み記事があれば -->
-					<?php if ($customPosts): ?>
+												<!--体の悩み記事の表示 -->
+		                    <?php
+													$args = array(
+														'post_type' => 'trouble',
+														'post_status' => 'publish',
+														'posts_per_page' => -1
+														);
+													$customPosts = get_posts($args);
+												?>
+												<!--体の悩み記事があれば -->
+												<?php if ($customPosts): ?>
 
-						<!--データの数分表示 -->
-						<?php foreach ($customPosts as $post): setup_postdata($post); ?>
-							<!--  Topページに表示するフラグがYesのみ表示する -->
-							<?php if (post_custom('primary') == "Yes"): ?>
-		                        <li class="list-mv05">
-		                            <div class="cap">
+													<!--データの数分表示 -->
+													<?php foreach ($customPosts as $post): setup_postdata($post); ?>
+														<!--  Topページに表示するフラグがYesのみ表示する -->
+														<?php if (post_custom('primary') == "Yes"): ?>
+				                        <li class="list-mv05">
+			                            <div class="cap">
 		                                <figure>
-		                                    <a href="<?php the_permalink(); ?>">
-											<!-- 投稿にアイキャッチ画像が割り当てられているかチェック -->
-							                <?php if(has_post_thumbnail()):?>
-							                	<?php echo the_post_thumbnail(array(320,213)); ?>
-											<?php endif; ?>
+	                                    <a href="<?php the_permalink(); ?>">
+																			<!-- 投稿にアイキャッチ画像が割り当てられているかチェック -->
+											                <?php if(has_post_thumbnail()):?>
+											                	<?php echo the_post_thumbnail(array(320,213)); ?>
+																			<?php endif; ?>
 		                                    <span class="ttl"><?php the_title(); ?></span>
 		                                    <figcaption>
 		                                        <h3><?php the_title(); ?></h3>
 		                                        <?php echo wpautop( post_custom('intro').'続きを読む...');?>
 		                                    </figcaption>
 		                                    </a>
-		                                </figure>
-		                            </div>
-		                        </li>
-	                        <?php endif; ?>
-                        <?php endforeach; ?>
-					<?php endif; ?>
-					<?php wp_reset_postdata(); ?>
+				                            </figure>
+				                          </div>
+				                        </li>
+			                        <?php endif; ?>
+			                        <?php endforeach; ?>
+												<?php endif; ?>
+												<?php wp_reset_postdata(); ?>
                     </ul>
                     </div>
                     <div class="other">
 						<!--スラッグ名からパーマリンクを取得 -->
                     	<?php
-						$page = get_page_by_path( 'trouble' );
-						$permalink = get_permalink( $page->ID );
-						?>
+											$page = get_page_by_path( 'trouble' );
+											$permalink = get_permalink( $page->ID );
+											?>
                     	<p><a href="<?php echo $permalink;?>">その他のお悩み事例</a></p>
                     </div>
                 </section>
@@ -130,27 +130,26 @@
 						<?php foreach ($customPosts as $post): setup_postdata($post); ?>
 							<!--  Topページに表示するフラグがYesのみ表示する -->
 							<?php if (post_custom('primary') == "Yes"): ?>
-		                        <div class="voice-in css-fukidashi">
-		                          <figure class="text">
-									<!-- <a href="<?php //echo get_permalink( get_page_by_path('voice')->ID); ?>">  -->
+                   <div class="voice-in css-fukidashi">
+                     <figure class="text">
 									 <!-- 投稿にアイキャッチ画像が割り当てられているかチェック -->
-						             <?php if(has_post_thumbnail()):?>
-						                <?php echo the_post_thumbnail(); ?>
-									 <?php endif; ?>
-		                             <figcaption>
-		                                <h3>
-		                                    <?php echo post_custom('age'); ?>&nbsp
-		                                    <?php echo post_custom('sex'); ?>&nbsp
-		                                    <?php echo post_custom('job'); ?>
-		                                </h3>
-		                                <p><?php the_content(); ?></p>
-		                            </figcaption>
-		                           </figure>
-		                          <div class="fukidashi">
+	             <?php if(has_post_thumbnail()):?>
+			                <?php echo the_post_thumbnail(); ?>
+							 <?php endif; ?>
+                       <figcaption>
+		                      <h3>
+	                          <?php echo post_custom('age'); ?>&nbsp
+	                          <?php echo post_custom('sex'); ?>&nbsp
+	                          <?php echo post_custom('job'); ?>
+                          </h3>
+                          <p><?php the_content(); ?></p>
+                       </figcaption>
+                     </figure>
+                   <div class="fukidashi">
 								  	<p><?php echo post_custom('title'); ?></p>
 								  </div>
-		                        </div>
-	                       <?php endif; ?>
+                 </div>
+               <?php endif; ?>
 						<?php endforeach; ?>
 					<?php endif; ?>
 					<?php wp_reset_postdata(); ?>

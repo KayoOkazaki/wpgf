@@ -19,7 +19,7 @@
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/home.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/style.css">
-    <!-- <link rel="stylesheet" href="css/responsive.css" media="screen and (max-width: 480px)"> -->
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/responsive.css" media="screen and (max-width: 600px)">
     <link rel="icon" type="image/ico" href="<?php echo get_template_directory_uri(); ?>/images/favicon.png">
 <?php wp_head(); ?>
 </head>
@@ -36,6 +36,10 @@
             </div>
         </div>
         <div id="globalNavi">
+<!-- <nav> -->
+   <?php //wp_nav_menu( array( 'theme_location' => 'mainnavi' ) ); ?>
+<!-- </nav> -->
+
 		 <?php
 			 wp_nav_menu(array(
 				 'menu' => '',
