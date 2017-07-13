@@ -14,7 +14,11 @@
        <div id="contentsInner">
             <div id="main">
                 <section id="QandA">
-                    <h2>Q and A&nbsp;&nbsp;よくある質問</h2>
+                    <h2>
+	                    <img src="<?php echo get_template_directory_uri(); ?>/images/print-i54.png" width="21%" alt="" />&nbsp;
+	                    Q and A&nbsp;&nbsp;よくある質問
+	                    &nbsp;<img src="<?php echo get_template_directory_uri(); ?>/images/print-i50.png" width="15%" alt="" />
+                    </h2>
                     <div id="QandA-1">
                         <dl>
 												<?php

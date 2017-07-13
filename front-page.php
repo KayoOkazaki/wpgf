@@ -13,109 +13,123 @@
        <div id="contentsInner">
             <div id="main">
                 <section id="news">
-                    <h2>What's New&nbsp;&nbsp;新着情報</h2>
+                    <h2>
+	                    <img src="<?php echo get_template_directory_uri(); ?>/images/print-i54.png" width="23%" alt="" />&nbsp;
+	                    What's New&nbsp;&nbsp;新着情報
+	                    &nbsp;<img src="<?php echo get_template_directory_uri(); ?>/images/print-i50.png" width="18%" alt="" />
+                    </h2>
                       <div>
                         <ul>
                         <?php
-													$args = array(
-														'post_type' => 'news',
-														'post_status' => 'publish',
-														'posts_per_page' => 5
-													);
-													$customPosts = get_posts($args);
-												?>
-												<!--新着情報があれば -->
-												<?php if ($customPosts): ?>
+							$args = array(
+								'post_type' => 'news',
+								'post_status' => 'publish',
+								'posts_per_page' => 5
+							);
+							$customPosts = get_posts($args);
+						?>
+						<!--新着情報があれば -->
+						<?php if ($customPosts): ?>
 
-													<!--新着情報をデータの数分表示 -->
-													<?php foreach ($customPosts as $post): setup_postdata($post); ?>
+							<!--新着情報をデータの数分表示 -->
+							<?php foreach ($customPosts as $post): setup_postdata($post); ?>
 
                             <li>
                             	<span class="news-date"><time datetime="<?php echo get_the_date('Y-m-d'); ?>">&nbsp&nbsp&nbsp<?php echo get_the_date('Y-m-d'); ?></time>&nbsp&nbsp&nbsp</span>
-															<span class="news-title">
-															<!--新着情報本文が存在すれば -->
-															<?php if(get_the_content()): ?>
+								<span class="news-title">
+								<!--新着情報本文が存在すれば -->
+								<?php if(get_the_content()): ?>
 
-																<!--新着情報タイトルと本文リンク情報を表示 -->
-																<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+									<!--新着情報タイトルと本文リンク情報を表示 -->
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 
-															<!--上記以外の時 -->
-															<?php else: ?>
+								<!--上記以外の時 -->
+								<?php else: ?>
 
-																<!--新着情報タイトルのみ表示 -->
-																<?php the_title(); ?>
-															<?php endif; ?>
-															</span>
-														</li>
-														<?php endforeach; ?>
-													<?php endif; ?>
-													<?php wp_reset_postdata(); ?>
+									<!--新着情報タイトルのみ表示 -->
+									<?php the_title(); ?>
+								<?php endif; ?>
+								</span>
+							</li>
+							<?php endforeach; ?>
+						<?php endif; ?>
+						<?php wp_reset_postdata(); ?>
                     	</ul>
                     </div>
                     <div class="other">
-											<!--スラッグ名からパーマリンクを取得 -->
+						<!--スラッグ名からパーマリンクを取得 -->
                     	<?php
-												$page = get_page_by_path( 'news' );
-												$permalink = get_permalink( $page->ID );
-												?>
+						$page = get_page_by_path( 'news' );
+						$permalink = get_permalink( $page->ID );
+						?>
                     	<p><a href="<?php echo $permalink;?>">その他のお知らせ</a></p>
                     </div>
                 </section>
                 <section id="trouble">
-                    <h2>Trouble こんな悩みはありませんか？</h2>
+                    <h2>
+	                    <img src="<?php echo get_template_directory_uri(); ?>/images/print-i54.png" width="21%" alt="" />&nbsp;
+	                    Trouble こんな悩みはありませんか？
+	                    &nbsp;<img src="<?php echo get_template_directory_uri(); ?>/images/print-i50.png" width="15%" alt="" />
+                    </h2>
+<!--                     <h2>Trouble こんな悩みはありませんか？</h2> -->
                     <div class="trouble-wrap">
                     <ul class="list">
 
-												<!--体の悩み記事の表示 -->
-		                    <?php
-													$args = array(
-														'post_type' => 'trouble',
-														'post_status' => 'publish',
-														'posts_per_page' => -1
-														);
-													$customPosts = get_posts($args);
-												?>
-												<!--体の悩み記事があれば -->
-												<?php if ($customPosts): ?>
+					<!--体の悩み記事の表示 -->
+	                    <?php
+						$args = array(
+							'post_type' => 'trouble',
+							'post_status' => 'publish',
+							'posts_per_page' => -1
+							);
+						$customPosts = get_posts($args);
+						?>
+					<!--体の悩み記事があれば -->
+					<?php if ($customPosts): ?>
 
-													<!--データの数分表示 -->
-													<?php foreach ($customPosts as $post): setup_postdata($post); ?>
-														<!--  Topページに表示するフラグがYesのみ表示する -->
-														<?php if (post_custom('primary') == "Yes"): ?>
+						<!--データの数分表示 -->
+						<?php foreach ($customPosts as $post): setup_postdata($post); ?>
+							<!--  Topページに表示するフラグがYesのみ表示する -->
+							<?php if (post_custom('primary') == "Yes"): ?>
 				                        <li class="list-mv05">
 			                            <div class="cap">
 		                                <figure>
 	                                    <a href="<?php the_permalink(); ?>">
-																			<!-- 投稿にアイキャッチ画像が割り当てられているかチェック -->
-											                <?php if(has_post_thumbnail()):?>
-											                	<?php echo the_post_thumbnail(array(320,213)); ?>
-																			<?php endif; ?>
-		                                    <span class="ttl"><?php the_title(); ?></span>
-		                                    <figcaption>
-		                                        <h3><?php the_title(); ?></h3>
-		                                        <?php echo wpautop( post_custom('intro').'続きを読む...');?>
-		                                    </figcaption>
-		                                    </a>
-				                            </figure>
-				                          </div>
-				                        </li>
-			                        <?php endif; ?>
-			                        <?php endforeach; ?>
-												<?php endif; ?>
-												<?php wp_reset_postdata(); ?>
+								<!-- 投稿にアイキャッチ画像が割り当てられているかチェック -->
+				                <?php if(has_post_thumbnail()):?>
+				                	<?php echo the_post_thumbnail(array(320,213)); ?>
+								<?php endif; ?>
+                                    <span class="ttl"><?php the_title(); ?></span>
+                                    <figcaption>
+                                        <h3><?php the_title(); ?></h3>
+                                        <?php echo wpautop( post_custom('intro').'続きを読む...');?>
+                                    </figcaption>
+                                    </a>
+		                            </figure>
+		                          </div>
+		                        </li>
+	                        <?php endif; ?>
+                        <?php endforeach; ?>
+					<?php endif; ?>
+					<?php wp_reset_postdata(); ?>
                     </ul>
                     </div>
                     <div class="other">
 						<!--スラッグ名からパーマリンクを取得 -->
                     	<?php
-											$page = get_page_by_path( 'trouble' );
-											$permalink = get_permalink( $page->ID );
-											?>
+						$page = get_page_by_path( 'trouble' );
+						$permalink = get_permalink( $page->ID );
+						?>
                     	<p><a href="<?php echo $permalink;?>">その他のお悩み事例</a></p>
                     </div>
                 </section>
                 <section id="voice">
-                    <h2>Voice お客様の声</h2>
+                    <h2>
+	                    <img src="<?php echo get_template_directory_uri(); ?>/images/print-i54.png" width="21%" alt="" />&nbsp;
+	                    Voice お客様の声
+	                    &nbsp;<img src="<?php echo get_template_directory_uri(); ?>/images/print-i50.png" width="15%" alt="" />
+                    </h2>
+<!--                     <h2>Voice お客様の声</h2> -->
                     <div class="voice-wrap">
 
 					<?php
@@ -164,7 +178,12 @@
                     </div>
                 </section>
                 <section id="shop">
-                    <h2>Access アクセス・店舗ご案内</h2>
+                    <h2>
+	                    <img src="<?php echo get_template_directory_uri(); ?>/images/print-i54.png" width="21%" alt="" />&nbsp;
+	                    Access アクセス・店舗ご案内
+	                    &nbsp;<img src="<?php echo get_template_directory_uri(); ?>/images/print-i50.png" width="15%" alt="" />
+                    </h2>
+<!--                     <h2>Access アクセス・店舗ご案内</h2> -->
 										<?php
 										 $args = array(
 												 'post_type' => 'shop',
@@ -204,7 +223,12 @@
                      <?php endif;?>
                 </section>
                 <section id="staff">
-                    <h2>Staff スタッフ紹介</h2>
+                    <h2>
+	                    <img src="<?php echo get_template_directory_uri(); ?>/images/print-i54.png" width="21%" alt="" />&nbsp;
+	                    Staff スタッフ紹介
+	                    &nbsp;<img src="<?php echo get_template_directory_uri(); ?>/images/print-i50.png" width="15%" alt="" />
+                    </h2>
+<!--                     <h2>Staff スタッフ紹介</h2> -->
                         <div class="staff-wrap">
                             <div class="staff-in">
                                 <div class="staff-image">

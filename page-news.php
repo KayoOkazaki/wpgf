@@ -14,7 +14,11 @@
        <div id="contentsInner">
             <div id="main">
                <section id="news-section">
-	               <h2>News&nbsp;&nbsp;ニュース</h2>
+                    <h2>
+	                    <img src="<?php echo get_template_directory_uri(); ?>/images/print-i54.png" width="21%" alt="" />&nbsp;
+	                    News&nbsp;&nbsp;ニュース
+	                    &nbsp;<img src="<?php echo get_template_directory_uri(); ?>/images/print-i50.png" width="15%" alt="" />
+                    </h2>
 									<?php
 									 $args = array(
 											 'post_type' => 'news',

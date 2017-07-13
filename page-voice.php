@@ -15,7 +15,11 @@
             <div id="main">
 
                 <section id="voice">
-                    <h2>Voice&nbsp;&nbsp;お客様の声</h2>
+                    <h2>
+	                    <img src="<?php echo get_template_directory_uri(); ?>/images/print-i54.png" width="21%" alt="" />&nbsp;
+	                    Voice&nbsp;&nbsp;お客様の声
+	                    &nbsp;<img src="<?php echo get_template_directory_uri(); ?>/images/print-i50.png" width="15%" alt="" />
+                    </h2>
 					<?php
 					 $args = array(
 							 'post_type' => 'voice',

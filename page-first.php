@@ -14,7 +14,11 @@
        <div id="contentsInner">
             <div id="main">
                 <section id="aboutus">
-                    <h2>Guidance&nbsp;&nbsp;初めての方へ</h2>
+                    <h2>
+	                    <img src="<?php echo get_template_directory_uri(); ?>/images/print-i54.png" width="21%" alt="" />&nbsp;
+	                    Guidance&nbsp;&nbsp;初めての方へ
+	                    &nbsp;<img src="<?php echo get_template_directory_uri(); ?>/images/print-i50.png" width="15%" alt="" />
+                    </h2>
                     <article id="aboutus01">
                         <h3>心も身体も癒せる総合的なヒーリングサロン</h3>
                         <div class="wrapper">

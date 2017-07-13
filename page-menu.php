@@ -14,7 +14,11 @@
        <div id="contentsInner">
             <div id="main">
                 <section id="pricelist">
-                    <h2>Menu&ensp;施術料金</h2>
+                    <h2>
+	                    <img src="<?php echo get_template_directory_uri(); ?>/images/print-i54.png" width="21%" alt="" />&nbsp;
+	                    Menu&ensp;施術料金
+	                    &nbsp;<img src="<?php echo get_template_directory_uri(); ?>/images/print-i50.png" width="15%" alt="" />
+                    </h2>
 
 										<?php
 										 $args = array(
